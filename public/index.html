@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberBuddy – Online Safety for Seniors</title>
+
+    <!-- Import Poppins font from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-papNM3d+Q0CkE9IpEfrO5QnvzRu5O1P+R9z0XYmXy/0i1RkzYF9kk4E1aPHCj3ElY0XlF0FE9FCxN1D+f+XK2w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config: Use Poppins as default sans font -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Poppins"', "sans-serif"],
+              cursive: ['"Dancing Script"', "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-100 py-10 text-center">
+      <h1 class="text-3xl font-bold">
+        CYBERBUDDY: HELPING YOU STAY SAFE ONLINE, ONE STEP AT A TIME
+      </h1>
+      <p class="mt-4 text-lg">
+        Because online safety shouldn’t be complicated – especially for our
+        seniors.
+      </p>
+    </header>
+
+    <!-- Introduction Section -->
+    <section
+      class="flex flex-col md:flex-row items-center justify-center p-6 bg-white"
+    >
+      <img
+        src="sc_pic.png"
+        alt="Older Adults with Laptop"
+        class="w-48 h-48 md:w-64 md:h-64 object-cover mr-6 rounded"
+      />
+      <div class="max-w-md">
+        <h2 class="text-2xl font-bold font-sans mb-2">
+          CyberBuddy makes online safety simple, friendly, and accessible
+        </h2>
+        <p class="text-2xl font-cursive">
+          We help older adults through easy guides, workshops, and hands-on
+          help.
+        </p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center my-8 px-4">
+      <form action="/signup" method="POST" class="text-center my-8 px-4">
+        <h3 class="text-xl font-semibold mb-4">
+          Sign up for a free guide or book a local workshop!
+        </h3>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="border p-2 rounded w-64 mb-2"
+        /><br />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="border p-2 rounded w-64 mb-2"
+        /><br />
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
+        >
+          Get Started
+        </button>
+      </form>
+    </section>
+
+    <!-- Educational Resources -->
+    <section class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 p-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-lg font-bold mb-2">LEARN THE BASICS</h4>
+          <ul class="space-y-2 list-disc list-inside text-base">
+            <li>What is a scam?</li>
+            <li>Password safety</li>
+            <li>Recognizing phishing emails</li>
+            <li>Safe online shopping</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-500">
+            Interactive guides and resources to get started.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-lg font-bold mb-2">VIDEO LESSONS</h4>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-200 h-24 rounded"></div>
+            <div
+              class="bg-gray-200 h-24 rounded flex items-center justify-center"
+            >
+              <svg
+                class="w-8 h-8 text-gray-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M10 8l6 4-6 4V8z" />
+              </svg>
+            </div>
+            <div class="bg-gray-200 h-24 rounded col-span-2"></div>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">
+            Step-by-step tutorials on staying safe online.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="text-center my-10">
+      <h4 class="text-lg font-semibold mb-2">TEST YOUR KNOWLEDGE</h4>
+      <button
+        class="border border-blue-500 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition"
+      >
+        Take the Quiz
+      </button>
+    </section>
+    <!-- Testimonials / Social Proof -->
+    <section class="bg-white py-10 px-6">
+      <h4 class="text-center text-2xl font-bold mb-6">What Our Users Say</h4>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <p class="italic text-sm">
+            "CyberBuddy helped me understand online scams in a simple way. I now
+            shop online with confidence!"
+          </p>
+          <p class="mt-2 text-right text-sm font-semibold">– Margaret, 68</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <p class="italic text-sm">
+            "The workshop was excellent. It answered all my questions and gave
+            me peace of mind."
+          </p>
+          <p class="mt-2 text-right text-sm font-semibold">– George, 73</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded shadow">
+          <p class="italic text-sm">
+            "I shared this with my parents and they love the video lessons. So
+            helpful!"
+          </p>
+          <p class="mt-2 text-right text-sm font-semibold">– Emily, 35</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <section class="text-center py-8 bg-blue-100">
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex justify-center gap-6">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook" class="hover:text-blue-700">
+          <svg
+            class="w-8 h-8 fill-current text-blue-800 hover:text-blue-600"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.02 3.66 9.17 8.44 9.93v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.25 0-1.64.78-1.64 1.57v1.88h2.78l-.44 2.9h-2.34v7.03C18.34 21.24 22 17.09 22 12.07z"
+            />
+          </svg>
+        </a>
+
+        <!-- Twitter -->
+        <a href="#" aria-label="Twitter" class="hover:text-blue-500">
+          <svg
+            class="w-8 h-8 fill-current text-blue-500 hover:text-blue-400"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.3 3.9A12.14 12.14 0 013 4.89a4.27 4.27 0 001.32 5.71 4.22 4.22 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.27 4.27 0 01-1.93.07 4.29 4.29 0 004 2.97A8.6 8.6 0 012 19.54 12.15 12.15 0 008.29 21c7.55 0 11.68-6.26 11.68-11.7 0-.18 0-.35-.01-.53A8.36 8.36 0 0022.46 6z"
+            />
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram" class="hover:text-pink-500">
+          <svg
+            class="w-8 h-8 fill-current text-pink-600 hover:text-pink-400"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"
+            />
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="#" aria-label="YouTube" class="hover:text-red-500">
+          <svg
+            class="w-8 h-8 fill-current text-red-600 hover:text-red-400"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.8 8.001c-.2-1.5-1.5-2.7-3-2.9-2.7-.3-8.6-.3-8.6-.3s-5.9 0-8.6.3c-1.5.2-2.8 1.4-3 2.9-.3 2.4-.3 5.9-.3 5.9s0 3.5.3 5.9c.2 1.5 1.5 2.7 3 2.9 2.7.3 8.6.3 8.6.3s5.9 0 8.6-.3c1.5-.2 2.8-1.4 3-2.9.3-2.4.3-5.9.3-5.9s0-3.5-.3-5.9zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"
+            />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn" class="hover:text-blue-800">
+          <svg
+            class="w-8 h-8 fill-current text-blue-700 hover:text-blue-500"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 3A2 2 0 0121 5v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.3 17.4V10H5.6v7.4h2.7zM6.95 8.8a1.55 1.55 0 110-3.1 1.55 1.55 0 010 3.1zM18.4 17.4v-4.1c0-2.2-1.2-3.2-2.7-3.2-1.3 0-1.8.7-2.1 1.2v-1H11v7.4h2.7v-4c0-1.1.3-2.1 1.5-2.1 1.2 0 1.3 1.3 1.3 2.2v3.9h2.7z"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center py-6 text-sm">
+      &copy; 2025 CyberBuddy. All rights reserved.
+    </footer>
+  </body>
+</html>
