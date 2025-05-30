@@ -28,15 +28,19 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo '🚀 Building Docker image...'
-                bat 'docker build -t %DOCKER_IMAGE% .'
+stage('Deploy') {
+    steps {
+        echo '🚀 Building Docker image...'
+        bat 'docker build -t %DOCKER_IMAGE% .'
 
-                echo '🐳 Running Docker container...'
-                bat 'docker run -d -p 3000:3000 --name cyberbuddy-container %DOCKER_IMAGE%'
-            }
-        }
+        echo '🧹 Removing any existing container...'
+        bat 'docker rm -f cyberbuddy-container || exit 0'
+
+        echo '🐳 Running Docker container...'
+        bat 'docker run -d -p 3000:3000 --name cyberbuddy-container %DOCKER_IMAGE%'
+    }
+}
+
     }
 
     post {
