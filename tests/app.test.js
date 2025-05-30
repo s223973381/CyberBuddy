@@ -20,7 +20,7 @@ describe('CyberBuddy App', () => {
   });
 
   test('POST /signup should save user and show thank you', async () => {
-    const response = await request(app).post('/signup').send({
+    const response = await request(app).post('/signup').type('form').send({
       name: 'Alice',
       email: 'alice@example.com'
     });

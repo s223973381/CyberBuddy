@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
-const signupFile = process.env.SIGNUP_FILE || 'signups.txt'; // <-- configurable
+const signupFile = process.env.SIGNUP_FILE || path.join(__dirname, 'signups.txt');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 
 app.post('/signup', (req, res) => {
   const { name, email } = req.body;
+  console.log('Received:', req.body);  // <-- check if data is parsed correctly
   const userData = `${name}, ${email}\n`;
   try {
     fs.appendFileSync(signupFile, userData);
@@ -26,6 +28,7 @@ app.post('/signup', (req, res) => {
     res.status(500).send('Something went wrong!');
   }
 });
+
 
 module.exports = app;
 
