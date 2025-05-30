@@ -9,32 +9,32 @@ pipeline {
         stage('Build') {
             steps {
                 echo '📦 Installing dependencies...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
                 echo '✅ Running tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Security') {
             steps {
                 echo '🔐 Running security audit...'
-                // Continue build even if audit fails; good for learning stage
-                sh 'npm audit || true'
+                // Allow audit to fail without breaking the pipeline
+                bat 'npm audit || exit 0'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo '🚀 Building Docker image...'
-                sh 'docker build -t $DOCKER_IMAGE .'
+                bat 'docker build -t %DOCKER_IMAGE% .'
 
                 echo '🐳 Running Docker container...'
-                sh 'docker run -d -p 3000:3000 --name cyberbuddy-container $DOCKER_IMAGE'
+                bat 'docker run -d -p 3000:3000 --name cyberbuddy-container %DOCKER_IMAGE%'
             }
         }
     }
@@ -42,7 +42,7 @@ pipeline {
     post {
         always {
             echo '🧹 Cleaning up...'
-            sh 'docker rm -f cyberbuddy-container || true'
+            bat 'docker rm -f cyberbuddy-container || exit 0'
         }
     }
 }
